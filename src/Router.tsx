@@ -6,6 +6,7 @@ import { NoteLayout } from "./pages/NoteLayout";
 import { Note } from "./pages/Note";
 import { EditNote } from "./pages/EditNote";
 import { v4 as uuidV4 } from "uuid";
+import Post from "./components/Post";
 
 export type Note = {
   id: string;
@@ -112,6 +113,7 @@ export default function Router() {
     { path: "/", element: <Home /> },
     { path: "/categories", element: <Categories /> },
     { path: "/dashboard", element: <Dashboard /> },
+    { path: "/test", element: <Post /> },
     {
       path: "/newBlog",
       element: (
