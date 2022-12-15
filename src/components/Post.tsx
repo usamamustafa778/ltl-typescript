@@ -2,8 +2,6 @@ import Markdown from "markdown-to-jsx";
 import { useEffect, useState } from "react";
 import Code from "./Code";
 import Nav from "./Nav";
-import * as fs from "fs";
-import * as path from "path";
 
 const Post = () => {
   //use the fs module to read the markdown files from the markdown folder
@@ -11,8 +9,6 @@ const Post = () => {
   const [postContent, setPostContent] = useState("");
   const [markdownFiles, setMarkdownFiles] = useState([]);
   const [isDark, setIsDark] = useState(true);
-
-  const files = fs.readdirSync("posts");
 
   useEffect(() => {
     fetchMarkdown("article.md");
