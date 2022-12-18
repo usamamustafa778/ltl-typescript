@@ -6,6 +6,16 @@
   font-family: "Satoshi", sans-serif;
 }
 
+@layer components {
+  .dashboardOption {
+    @apply flex items-center p-3 cursor-pointer text-gray-500 transition-all rounded w-full
+  }
+
+  .dashboardOption:hover {
+    @apply text-blue-900 bg-blue-400/20
+  }
+}
+
 /* .code .copy-icon {
   position: absolute;
   top: 1rem;

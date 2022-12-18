@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import {

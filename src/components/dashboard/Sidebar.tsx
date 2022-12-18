@@ -19,38 +19,56 @@ export default function Sidebar() {
         <div className="hidden lg:flex flex-col w-full">
           <div className="flex flex-col w-full mt-20">
             <Link
+              to="/"
+              className="dashboardOption"
+            >
+              Home
+            </Link>
+            <Link
               to="/dashboard"
-              className="mt-3 flex items-center p-3 cursor-pointer text-gray-500 transition-all hover:text-blue-900 rounded w-full hover:bg-blue-400/20"
+              className="dashboardOption"
+            >
+              About
+            </Link>
+            <Link
+              to="/dashboard"
+              className="dashboardOption"
+            >
+              Favourites
+            </Link>
+            <Link
+              to="/dashboard"
+              className="dashboardOption"
             >
               Overview
             </Link>
             <Link
               to="/dashboard"
-              className="mt-3 flex items-center p-3 cursor-pointer text-gray-500 transition-all hover:text-blue-900 rounded w-full hover:bg-blue-400/20"
+              className="dashboardOption"
             >
               Courses
             </Link>
             <Link
               to="/dashboard"
-              className="mt-3 flex items-center p-3 cursor-pointer text-gray-500 transition-all hover:text-blue-900 rounded w-full hover:bg-blue-400/20"
+              className="dashboardOption"
             >
               Pricing
             </Link>
             <Link
               to="/dashboard"
-              className="mt-3 flex items-center p-3 cursor-pointer text-gray-500 transition-all hover:text-blue-900 rounded w-full hover:bg-blue-400/20"
+              className="dashboardOption"
             >
               Mobile App
             </Link>
             <Link
               to="/dashboard"
-              className="mt-3 flex items-center p-3 cursor-pointer text-gray-500 transition-all hover:text-blue-900 rounded w-full hover:bg-blue-400/20"
+              className="dashboardOption"
             >
               Settings
             </Link>
             <Link
               to="/dashboard"
-              className="mt-3 flex items-center p-3 cursor-pointer text-gray-500 transition-all hover:text-blue-900 rounded w-full hover:bg-blue-400/20"
+              className="dashboardOption"
             >
               Schedule
             </Link>

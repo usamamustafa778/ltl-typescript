@@ -16,3 +16,6 @@ export { default as DashboardNav } from "./dashboard/Nav";
 export { default as DashboardSidebar } from "./dashboard/Sidebar";
 export { default as DashboardHead } from "./dashboard/Head";
 export { default as ItemsSentences } from "./dashboard/ItemsSentences";
+
+// blog
+export { default as BlogNav } from "./blog/BlogNav";
