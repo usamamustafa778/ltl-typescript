@@ -35,56 +35,54 @@ const Blog = () => {
   };
 
   return (
-    <>
-      <div className="grid lg:grid-cols-body h-screen">
-        <DashboardSidebar />
-        <div className="flex flex-col">
-          <DashboardNav />
-          <div
-            className={
-              blogOpen
-                ? "w-full grid grid-cols-blogs"
-                : "w-full grid grid-cols-closeBlogs"
-            }
-          >
-            <div className="p-7">
-              {" "}
-              {/* <div>
-                {markdownFiles.map((file: any) => (
-                  <div key="{file.name}">{file.content}</div>
-                ))}
-              </div> */}
-              <Markdown
-                options={{
-                  overrides: {
-                    Code: {
-                      component: Code,
-                      props: {
-                        isDark,
-                        setIsDark,
-                      },
-                    },
-                    li: {
-                      component: "li",
-                      props: {
-                        className: "list-disc ml-4 my-3",
-                      },
+    <div className="grid lg:grid-cols-body h-screen">
+      <DashboardSidebar />
+      <div className="flex flex-col">
+        <DashboardNav />
+        <div
+          className={
+            blogOpen
+              ? "w-full flex flex-col lg:grid grid-cols-blogs"
+              : "w-full flex flex-col lg:grid grid-cols-closeBlogs"
+          }
+        >
+          <div className="p-7">
+            {" "}
+            {/* <div>
+            {markdownFiles.map((file: any) => (
+              <div key="{file.name}">{file.content}</div>
+            ))}
+          </div> */}
+            <Markdown
+              options={{
+                overrides: {
+                  Code: {
+                    component: Code,
+                    props: {
+                      isDark,
+                      setIsDark,
                     },
                   },
-                }}
-              >
-                {postContent}
-              </Markdown>
-            </div>
-            <BlogNav
-              blogOpen={blogOpen}
-              handleBlogSidebar={handleBlogSidebar}
-              fetchMarkdown={fetchMarkdown}
-            />
+                  li: {
+                    component: "li",
+                    props: {
+                      className: "list-disc ml-4 my-3",
+                    },
+                  },
+                },
+              }}
+            >
+              {postContent}
+            </Markdown>
           </div>
+          <BlogNav
+            blogOpen={blogOpen}
+            handleBlogSidebar={handleBlogSidebar}
+            fetchMarkdown={fetchMarkdown}
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

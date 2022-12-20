@@ -15,8 +15,8 @@ export default function BlogNav({
     <div
       className={
         blogOpen
-          ? "flex p-7 space-y-2 flex-col items-center border-l bg-gray-50"
-          : "flex py-7 px-3 space-y-2 flex-col items-center border-l bg-gray-50"
+          ? "hidden lg:flex p-7 space-y-2 flex-col items-center border-l bg-gray-50"
+          : "hidden lg:flex py-7 px-3 space-y-2 flex-col items-center border-l bg-gray-50"
       }
     >
       <button
