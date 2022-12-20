@@ -14,6 +14,13 @@
   .dashboardOption:hover {
     @apply text-blue-900 bg-blue-400/20
   }
+
+  .blogButton{
+    @apply font-medium w-full flex items-center justify-center text-center px-5 py-2 bg-white shadow-md shadow-gray-300 rounded-md
+  }
+  .blogButton:hover{
+    @apply bg-blue-100 text-primary
+  }
 }
 
 /* .code .copy-icon {

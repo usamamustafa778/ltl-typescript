@@ -1,34 +1,46 @@
+import { Bars3Icon } from "@heroicons/react/24/solid";
+import blogs from "./blogs.json";
 type props = {
   fetchMarkdown: any;
+  handleBlogSidebar: any;
+  blogOpen: any;
 };
 
-export default function BlogNav({ fetchMarkdown }: props) {
+export default function BlogNav({
+  fetchMarkdown,
+  blogOpen,
+  handleBlogSidebar,
+}: props) {
   return (
-    <div className="flex items-center space-x-2">
+    <div
+      className={
+        blogOpen
+          ? "flex p-7 space-y-2 flex-col items-center border-l bg-gray-50"
+          : "flex py-7 px-3 space-y-2 flex-col items-center border-l bg-gray-50"
+      }
+    >
       <button
-      className="font-medium px-5 py-2 bg-gray-100 rounded-md hover:bg-blue-100 hover:text-primary"
-        onClick={() => {
-          fetchMarkdown("article.md");
-        }}
+        onClick={handleBlogSidebar}
+        className={
+          blogOpen
+            ? "w-full flex justify-end text-primary hover:text-blue-500"
+            : "w-full flex justify-center text-primary hover:text-blue-500"
+        }
       >
-        Blog 1
+        <Bars3Icon className="h-8" />
       </button>
-      <button
-      className="font-medium px-5 py-2 bg-gray-100 rounded-md hover:bg-blue-100 hover:text-primary"
-        onClick={() => {
-          fetchMarkdown("second.md");
-        }}
-      >
-        Blog 2
-      </button>
-      <button
-      className="font-medium px-5 py-2 bg-gray-100 rounded-md hover:bg-blue-100 hover:text-primary"
-        onClick={() => {
-          fetchMarkdown("third.md");
-        }}
-      >
-        Blog 2
-      </button>
+      {blogs.map((blog, index) => (
+        <button
+          key={index}
+          className="blogButton"
+          onClick={() => {
+            fetchMarkdown(blog.file);
+          }}
+        >
+          {blogOpen && <span className="mr-2">{blog.name}</span>}
+          {blog.id}
+        </button>
+      ))}
     </div>
   );
 }

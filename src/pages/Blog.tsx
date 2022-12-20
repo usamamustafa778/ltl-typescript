@@ -15,6 +15,11 @@ const Blog = () => {
   const [postContent, setPostContent] = useState("");
   const [markdownFiles, setMarkdownFiles] = useState([]);
   const [isDark, setIsDark] = useState(true);
+  const [blogOpen, setBlogOpen] = useState(false);
+
+  const handleBlogSidebar = () => {
+    setBlogOpen(!blogOpen);
+  };
 
   useEffect(() => {
     fetchMarkdown("article.md");
@@ -35,36 +40,47 @@ const Blog = () => {
         <DashboardSidebar />
         <div className="flex flex-col">
           <DashboardNav />
-          <div className="py-3 px-7 w-full">
-            <BlogNav fetchMarkdown={fetchMarkdown} />
-            <div>
-              {markdownFiles.map((file: any) => (
-                <div key="{file.name}">{file.content}</div>
-              ))}
+          <div
+            className={
+              blogOpen
+                ? "w-full grid grid-cols-blogs"
+                : "w-full grid grid-cols-closeBlogs"
+            }
+          >
+            <div className="p-7">
+              {" "}
+              {/* <div>
+                {markdownFiles.map((file: any) => (
+                  <div key="{file.name}">{file.content}</div>
+                ))}
+              </div> */}
+              <Markdown
+                options={{
+                  overrides: {
+                    Code: {
+                      component: Code,
+                      props: {
+                        isDark,
+                        setIsDark,
+                      },
+                    },
+                    li: {
+                      component: "li",
+                      props: {
+                        className: "list-disc ml-4 my-3",
+                      },
+                    },
+                  },
+                }}
+              >
+                {postContent}
+              </Markdown>
             </div>
-
-            <br />
-            <Markdown
-              options={{
-                overrides: {
-                  Code: {
-                    component: Code,
-                    props: {
-                      isDark,
-                      setIsDark,
-                    },
-                  },
-                  li: {
-                    component: "li",
-                    props: {
-                      className: "list-disc ml-4 my-3 ",
-                    },
-                  },
-                },
-              }}
-            >
-              {postContent}
-            </Markdown>
+            <BlogNav
+              blogOpen={blogOpen}
+              handleBlogSidebar={handleBlogSidebar}
+              fetchMarkdown={fetchMarkdown}
+            />
           </div>
         </div>
       </div>
