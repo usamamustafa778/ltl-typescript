@@ -54,7 +54,7 @@ export default function Nav() {
         id="menu"
         className={
           active
-            ? "relative lg:hidden p-1 mt-6 text-xl w-10/12  text-black rounded-lg flex-auto h-screen"
+            ? "fixed lg:hidden bg-white p-1 mt-8 text-xl w-10/12  text-black rounded-lg flex-auto h-screen"
             : "hidden"
         }
       >

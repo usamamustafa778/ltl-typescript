@@ -3,19 +3,65 @@
 @tailwind utilities;
 
 * {
-    font-family: 'Satoshi', sans-serif;
+  font-family: "Satoshi", sans-serif;
 }
 
 @layer components {
-    .webPage {
-        @apply flex flex-col items-center w-full
-    }
+  .dashboardOption {
+    @apply flex items-center p-3 cursor-pointer text-gray-500 transition-all rounded w-full
+  }
 
-    .btnPrimary {
-        @apply py-3 px-8 border text-white bg-primary font-medium border-primary rounded-md
-    }
+  .dashboardOption:hover {
+    @apply text-blue-900 bg-blue-400/20
+  }
 
-    .btnSecondary {
-        @apply py-3 px-8 mr-6 border text-primary font-medium border-primary rounded-md
-    }
+  .blogButton{
+    @apply font-medium w-full flex items-center justify-center text-center px-5 py-2 bg-white shadow-md shadow-gray-300 rounded-md
+  }
+  .blogButton:hover{
+    @apply bg-blue-100 text-primary
+  }
+}
+
+/* .code .copy-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 5;
+} */
+
+.containers {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 0.5rem 0 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.code__icons {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 1;
+  display: flex;
+  gap: 5px;
+}
+
+.code {
+  position: relative;
+}
+
+@layer components {
+  .webPage {
+    @apply flex flex-col items-center w-full;
+  }
+
+  .btnPrimary {
+    @apply py-3 px-8 border text-white bg-primary font-medium border-primary rounded-md;
+  }
+
+  .btnSecondary {
+    @apply py-3 px-8 mr-6 border text-primary font-medium border-primary rounded-md;
+  }
 }
