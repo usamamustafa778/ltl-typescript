@@ -53,7 +53,7 @@ export default function ItemsSentences() {
 
 function Row() {
   return (
-    <div className="w-full grid lg:grid-cols-blogs">
+    <div className="w-full grid lg:grid-cols-itemsSentences">
       <div className="grid grid-cols-blogSideLeft border-b pb-7 pr-5 pt-5 lg:border-r">
         <div className="h-8 w-8 p-1 rounded-full flex items-center justify-center bg-white border">
           <SpeakerWaveIcon className="h-5 text-blue-900" />
