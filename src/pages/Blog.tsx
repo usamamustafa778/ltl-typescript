@@ -2,10 +2,8 @@ import Markdown from "markdown-to-jsx";
 import { useEffect, useState } from "react";
 import {
   BlogNav,
-  DashboardHead,
   DashboardNav,
   DashboardSidebar,
-  ItemsSentences,
 } from "../components";
 import Code from "../components/Code";
 
@@ -13,7 +11,7 @@ const Blog = () => {
   //use the fs module to read the markdown files from the markdown folder
 
   const [postContent, setPostContent] = useState("");
-  const [markdownFiles, setMarkdownFiles] = useState([]);
+  // const [markdownFiles, setMarkdownFiles] = useState([]);
   const [isDark, setIsDark] = useState(true);
   const [blogOpen, setBlogOpen] = useState(false);
 
